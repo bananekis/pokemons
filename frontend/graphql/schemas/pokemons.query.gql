@@ -1,0 +1,32 @@
+query Pokemons($query: PokemonsQueryInput!) {
+  pokemons(query: $query) {
+    edges {
+      attacks {
+        fast {
+          damage
+          name
+          type
+        }
+        special {
+          name
+          type
+          damage
+        }
+      }
+      image
+      isFavorite
+      weaknesses
+      name
+      evolutionRequirements {
+        amount
+        name
+      }
+      classification
+      id
+      types
+      evolutions {
+        name
+      }
+    }
+  }
+}

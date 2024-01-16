@@ -1,0 +1,54 @@
+fragment PokemonEvolutions on Pokemon {
+  id
+  isFavorite
+  image
+  name
+  evolutions {
+    id
+    isFavorite
+    image
+    name
+  }
+}
+
+query PokemonById($pokemonByIdId: ID!) {
+  pokemonById(id: $pokemonByIdId) {
+    ...PokemonEvolutions
+    sound
+    maxHP
+    maxCP
+    height {
+      minimum
+      maximum
+    }
+    weight {
+      minimum
+      maximum
+    }
+    types
+    attacks {
+      fast {
+        damage
+        name
+        type
+      }
+      special {
+        name
+        type
+        damage
+      }
+    }
+    weaknesses
+    evolutionRequirements {
+      amount
+      name
+    }
+    classification
+    evolutions {
+      ...PokemonEvolutions
+      evolutions {
+        ...PokemonEvolutions
+      }
+    }
+  }
+}

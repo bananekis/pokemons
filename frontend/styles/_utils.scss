@@ -1,0 +1,52 @@
+// _utils.scss
+@import './_colors';
+
+@mixin no-outline {
+  outline: none !important;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column($gap: 20px) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin aspect-ratio($ratio) {
+  aspect-ratio: $ratio;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.fill-heart {
+  fill: $heart-color;
+  color: $heart-color;
+}
+
+.fill-content {
+  width: 100%;
+  height: 100%;
+}
+
+.relative {
+  position: relative;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
+}
